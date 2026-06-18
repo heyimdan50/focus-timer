@@ -11,7 +11,7 @@ const labels = {
     long: 'Take a long break',
 };
 
-const RING = 628; // circumference of the progress ring
+const RING = 628;
 
 let settings = loadSettings();
 let mode = 'focus';
@@ -132,9 +132,7 @@ function beep() {
         gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
         osc.start();
         osc.stop(ctx.currentTime + 0.6);
-    } catch {
-        // audio not available, ignore
-    }
+    } catch {}
 }
 
 function notify() {
