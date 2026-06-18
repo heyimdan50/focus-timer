@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Focus Timer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+    <div class="modes">
+        <button class="mode active" data-mode="focus">Focus</button>
+        <button class="mode" data-mode="short">Short Break</button>
+        <button class="mode" data-mode="long">Long Break</button>
+    </div>
+
+    <div class="clock">
+        <svg class="ring" viewBox="0 0 220 220">
+            <circle class="ring-track" cx="110" cy="110" r="100"></circle>
+            <circle class="ring-fill" cx="110" cy="110" r="100"></circle>
+        </svg>
+        <div class="readout">
+            <span class="time" id="time">25:00</span>
+            <span class="label" id="label">Time to focus</span>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn primary" id="toggle">Start</button>
+        <button class="btn" id="reset">Reset</button>
+        <button class="btn" id="skip">Skip</button>
+    </div>
+
+    <div class="dots" id="dots"></div>
+
+    <button class="settings-open" id="settingsOpen" aria-label="Settings">Settings</button>
+
+    <div class="panel" id="panel" hidden>
+        <h2>Settings</h2>
+        <label>Focus minutes <input type="number" id="focusLen" min="1" max="90"></label>
+        <label>Short break minutes <input type="number" id="shortLen" min="1" max="30"></label>
+        <label>Long break minutes <input type="number" id="longLen" min="1" max="60"></label>
+        <label class="row"><input type="checkbox" id="soundOn"> Play a sound when a session ends</label>
+        <button class="btn primary" id="saveSettings">Save</button>
+    </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
